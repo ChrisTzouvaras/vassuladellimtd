@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Δισκογραφία - Βασούλα Δελλή</title>
+  <style>
+    body {
+      font-family: Verdana, Geneva, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: black;
+    }
+
+    nav {
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      right: 20px;
+      background: white;
+      color: black;
+      border: 1px solid black;
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    header {
+      padding: 60px 20px 20px 20px;
+      text-align: center;
+      color: black;
+    }
+
+    .name-button {
+      background: none;
+      border: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #bbb;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
+      border: 4px solid black;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .left { left: 0; }
+    .right { left: 50%; }
+    .right::after { left: -16px; }
+
+    .content {
+      padding: 20px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .content iframe {
+      width: 100%;
+      max-width: 100%;
+      border: none;
+      margin-top: 10px;
+    }
+
+    .discography-entry {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .discography-entry img {
+      width: 140px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background: none;
+      color: black;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .container::after {
+        left: 60px;
+      }
+
+      .right {
+        left: 0%;
+      }
+
+      .right::after {
+        left: 60px;
+      }
+
+      .discography-entry {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .discography-entry img {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="bio.html">Βιογραφικό</a></li>
+      <li><a href="performance.html">Παραστάσεις</a></li>
+      <li><a href="maestro.html">Μουσική Προετοιμασία-Διδασκαλία</a></li>
+      <li><a href="discography.html">Δισκογραφία</a></li>
+      <li><a href="contact.html">Επικοινωνία</a></li>
+    </ul>
+    <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+  </nav>
+
+  <header>
+    <button class="name-button" onclick="window.location.href='index.html'" id="name-button" data-gr="Βασούλα Δελλή" data-en="Vassula Delli">Βασούλα Δελλή</button>
+    <p id="title-text" data-gr="Μουσικός / Performer / Συνθέτρια / Παιδαγωγός" data-en="Musician / Performer / Composer / Educator">
+      Μουσικός / Performer / Συνθέτρια / Παιδαγωγός
+      <hr>
+    </p>
+  </header>
+
+  <h2 class="lang" data-gr="Δισκογραφία" data-en="Discography">Δισκογραφία</h2>
+
+  <div class="timeline">
+    <div class="container left">
+      <div class="content">
+        <h3>2018 & 2024</h3>
+        <p>Παιδικά τραγούδια του σχολείου μας<br>Δύο άλμπουμς με την παιδική χορωδία της Μοντεσσοριανής Σχολής Αθηνών Μ. Γουδέλη.</p>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <h3>2023</h3>
+        <p>Καλημέρα Υπναρά Μου, Ηλίας Βαμβακούσης<br>Φωνητικά</p>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <h3>2021</h3>
+        <p>Πολυφωνικές Διαδρομές, Πλειάδες<br>Πολυφωνικά τραγούδια από Ελλάδα και εξωτερικό</p>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <h3>2020</h3>
+        <p>Τέσσερα ερωτικά τραγούδια του Αλέξανδρου Καψοκαβαδή</p>
+        <iframe src="https://www.youtube.com/embed/O3ModnGPiis" height="300" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <h3>2015</h3>
+        <p>Γυναίκες της Πέτρας – Encardia + Πλειάδες<br>Διπλό CD + DVD</p>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <h3>2012</h3>
+        <div class="discography-entry">
+          <div>
+            <strong>Περιπλανώμενες Πλειάδες, Πλειάδες</strong><br>
+            Πολυφωνικά ηπειρωτικά τραγούδια
+          </div>
+          <img src="./periplanomenes peiades.jpg" alt="Περιπλανώμενες Πλειάδες">
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <h3>2010</h3>
+        <p>AEALO, Rotting Christ<br>Φωνητικά</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <footer>
+    <p>&copy; 2025 Βασούλα Δελλή<br>Created by Chris Tzouvaras</p>
+  </footer>
+
+  <script>
+    let isGreek = true;
+    function toggleLanguage() {
+      isGreek = !isGreek;
+      document.querySelectorAll('.lang').forEach(el => {
+        el.textContent = isGreek ? el.getAttribute('data-gr') : el.getAttribute('data-en');
+      });
+      document.getElementById('title-text').textContent = isGreek
+        ? document.getElementById('title-text').getAttribute('data-gr')
+        : document.getElementById('title-text').getAttribute('data-en');
+      document.getElementById('name-button').textContent = isGreek
+        ? document.getElementById('name-button').getAttribute('data-gr')
+        : document.getElementById('name-button').getAttribute('data-en');
+      document.querySelector('.lang-toggle').textContent = isGreek ? "EN" : "GR";
+    }
+  </script>
+</body>
+</html>

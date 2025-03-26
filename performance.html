@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βιογραφικό - Βασούλα Δελλή</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            color: black;
+        }
+
+        /* Navbar */
+        nav {
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border-bottom: 1px solid #ddd;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: black;
+            color: white;
+        }
+
+         /* Performances Grid */
+         .performances {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+            gap: 10px; /* Smaller gap between items */
+            padding: 20px;
+            margin-top: 80px;
+            justify-content: center; /* Center the grid */
+        }
+
+        .performance-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            height: 250px; /* Set a fixed height */
+        }
+
+        .performance-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .performance-details {
+            margin-top: 10px;
+        }
+
+        .performance-title {
+            font-size: 16px; /* Smaller font size */
+            font-weight: bold;
+            color: black;
+            margin-top: 10px;
+        }
+
+        .performance-role {
+            font-size: 12px; /* Smaller font size */
+            color: gray;
+            margin-top: 5px;
+        }
+
+        /* Language Toggle Button */
+        .lang-toggle {
+            position: absolute;
+            right: 20px;
+            background: white;
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            background: none;
+            color: black;
+        }
+
+        /* Biography Section */
+        .bio-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        /* Flex layout for alternating text and image */
+        .bio-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Reverse order for even sections (image on right) */
+        .bio-section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Smaller Square Profile Image */
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        .bio-text {
+            max-width: 600px;
+            text-align: justify;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            color: black;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 50px;
+            background: none;
+        }
+
+        /* Button style for Βασούλα Δελλή */
+        .name-button {
+            background: none;
+            border: none;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .name-button:hover {
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .bio-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .bio-section:nth-child(even) {
+                flex-direction: column;
+            }
+
+            /* Adjust navbar for small screens */
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Make language toggle button larger for mobile screens */
+            .lang-toggle {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+
+            /* Navbar Links Adjustment */
+            nav ul li a {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+
+        header1{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="bio.html" class="lang" data-gr="Βιογραφικό" data-en="Biography">Βιογραφικό</a></li>
+            <li><a href="performance.html" class="lang" data-gr="Παραστάσεις" data-en="Performances">Παραστάσεις</a></li>
+            <li><a href="maestro.html" class="lang" data-gr="Μουσική Προετοιμασία-Διδασκαλία" data-en="Music Preparation & Teaching">Μουσική Προετοιμασία-Διδασκαλία</a></li>
+            <li><a href="discography.html" class="lang" data-gr="Δισκογραφία" data-en="Discography">Δισκογραφία</a></li>
+            <li><a href="contact.html" class="lang" data-gr="Επικοινωνία" data-en="Contact">Επικοινωνία</a></li>
+        </ul>
+        <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <button class="name-button" onclick="window.location.href='index.html'" id="name-button" data-gr="Βασούλα Δελλή" data-en="Vassula Delli">Βασούλα Δελλή</button>
+        <p id="title-text" data-gr="Μουσικός / Performer / Συνθέτρια / Παιδαγωγός" data-en="Musician / Performer / Composer / Educator">
+            Μουσικός / Performer / Συνθέτρια / Παιδαγωγός
+            <hr>
+        </p>
+    </header>
+    <h2 class="lang" data-gr="Παραστάσεις" data-en="Performances">Παραστάσεις</h2>
+     <!-- Performances Section -->
+     <div class="performances">
+        <!-- Performance Item 1 -->
+        <div class="performance-item">
+            <a href="ovallady.html">
+                <img src="oval1.jpg" alt="Η Oβάλ Κυρία">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Η Oβάλ Κυρία</h3>
+                <p class="performance-role">Singer(Pleiades)-Performer</p>
+            </div>
+        </div>
+
+        <!-- Performance Item 4 -->
+        <div class="performance-item">
+            <a href="habmain.html">
+                <img src="hm11.jpeg" alt="Performance 4">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">We Habitually Maintain</h3>
+                <p class="performance-role">Performer-Music Composer</p>
+            </div>
+        </div>
+
+
+        <!-- Performance Item 7 -->
+        <div class="performance-item">
+            <a href="itsa.html">
+                <img src="itsa1.jpg" alt="Performance 7">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Η Ίτσα του Σάσμα ή Ο ανάποδος χορός</h3>
+                <p class="performance-role">Music Composer</p>
+            </div>
+        </div>
+
+        
+
+        
+    </div>
+
+    <!-- Second Set of Performance Grid -->
+    <div class="performances">
+        <!-- Performance Item 3 -->
+        <div class="performance-item">
+            <a href="topikoi.html">
+                <img src="topikoi.jpg" alt="Τοπικοί Τροπικοί">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Τοπικοί Τροπικοί</h3>
+                <p class="performance-role">Music Composer-Singer(Pleiades)</p>
+            </div>
+        </div>
+
+        <!-- Performance Item 5 -->
+        <div class="performance-item">
+            <a href="dianaevan.html">
+                <img src="dian1.jpg" alt="Performance 5">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Diana, Even</Em></h3>
+                <p class="performance-role">Singe(Pleiades)</p>
+            </div>
+        </div>
+
+        <!-- Performance Item 8 -->
+        <div class="performance-item">
+            <a href="zanou.html">
+                <img src="ζανου.jpg" alt="Performance 8">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Ζανού</Em></h3>
+                <p class="performance-role">Performer</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="performances">
+        
+        <!-- Performance Item 2 -->
+        <div class="performance-item">
+            <a href="martha.html">
+                <img src="Μάρθα Μια ιστορία από το Μεσολόγγι_Τάσης Χριστογιαννόπουλος_φωτο Γιώργος Σπανός.jpg" alt="Μάρθα μια ιστορία από το Μεσολόγγι">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Μάρθα μια ιστορία από το Μεσολόγγι</h3>
+                <p class="performance-role">Singer(Pleiades)</p>
+            </div>
+        </div>
+        
+        
+
+        <!-- Performance Item 9 -->
+        <div class="performance-item">
+            <a href="dg.html">
+                <img src="dg1.jpg" alt="Performance 9">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Κήπος Δεδομένων</h3>
+                <p class="performance-role">Music Composer-Singer(Pleiades)</p>
+            </div>
+        </div>
+
+        <!-- Performance Item 10 -->
+        <div class="performance-item">
+            <a href="hmi.html">
+                <img src="hmi2.jpg" alt="Performance 10">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Her Mind's I</h3>
+                <p class="performance-role">Music Composer-Singer</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="performances">
+
+        <!-- Performance Item 11 -->
+        <div class="performance-item">
+            <a href="ge.html">
+                <img src="ge4.jpg" alt="Performance 11">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Γκρίζος Έρωτας</Em></h3>
+                <p class="performance-role">Singer</p>
+            </div>
+        </div>
+
+
+        <!-- Performance Item 12 -->
+        <div class="performance-item">
+            <a href="et.html">
+                <img src="et1.jpg,1440" alt="Performance 9">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">The Way Earthly Things Are Going</h3>
+                <p class="performance-role">Singer(Pleiades)</p>
+            </div>
+        </div>
+
+        
+        <!-- Performance Item 13 -->
+        <div class="performance-item">
+            <a href="gp.html">
+                <img src="gp3.JPG" alt="Performance 13">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Γυναίκες...της Πέτρας</h3>
+                <p class="performance-role">Singer(Pleiades)-Dancer</p>
+            </div>
+        </div>
+                
+
+        
+    </div>
+ 
+    <div class="performances">
+
+        <!-- Performance Item 6 -->
+        <div class="performance-item">
+            <a href="sitpwg.html">
+                <img src="sp1.jpg" alt="Performance 6">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title">Sunday in the park with George</h3>
+                <p class="performance-role">Performer</p>
+            </div>
+        </div>
+        
+        
+
+        <!-- Performance Item 14 -->
+        <div class="performance-item">
+            <a href="perasma.html">
+                <img src="perasma3.jpg" alt="Performance 14">
+            </a>
+            <div class="performance-details">
+                <h3 class="performance-title"></Em>To Πέρασμα</h3>
+                <p class="performance-role">Singer(Pleiades)-Performer</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Βασούλα Δελλή<br>
+            Created by Chris Tzouvaras</p>
+    </footer>
+
+    <script>
+        let isGreek = true;
+
+        function toggleLanguage() {
+            isGreek = !isGreek;
+            
+            // Update all elements with class 'lang'
+            document.querySelectorAll('.lang').forEach(el => {
+                el.textContent = isGreek ? el.getAttribute('data-gr') : el.getAttribute('data-en');
+            });
+
+            // Update title and name button
+            document.getElementById('title-text').textContent = isGreek 
+                ? document.getElementById('title-text').getAttribute('data-gr') 
+                : document.getElementById('title-text').getAttribute('data-en');
+
+            document.getElementById('name-button').textContent = isGreek 
+                ? document.getElementById('name-button').getAttribute('data-gr') 
+                : document.getElementById('name-button').getAttribute('data-en');
+
+            // Toggle button text
+            document.querySelector('.lang-toggle').textContent = isGreek ? "EN" : "GR";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Βασούλα Δελλή</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: Verdana, Geneva, sans-serif;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: #f4f4f4;
+      text-align: center;
+      color: black;
+    }
+
+    nav {
+      background-color: white;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: black;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 5px;
+    }
+
+    nav ul li a:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      right: 20px;
+      background: white;
+      color: black;
+      border: 1px solid black;
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .lang-toggle:hover {
+      background: black;
+      color: white;
+    }
+
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: url('pexels-gdtography-277628-950241.jpg') no-repeat center center/cover;
+      z-index: -1;
+    }
+
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 70px;
+    }
+
+    header {
+      background: none;
+      padding: 20px;
+      text-align: center;
+      color: black;
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    .name-button {
+      background: none;
+      border: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .name-button:hover {
+      color: #555;
+    }
+
+    .profile-img {
+      width: 300px;
+      height: auto;
+      object-fit: contain;
+      background-color: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      margin: 20px auto;
+      display: block;
+    }
+
+    footer {
+      background: none;
+      color: black;
+      padding: 10px 0;
+      text-align: center;
+      width: 100%;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .profile-img {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-image"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="bio.html" class="lang" data-gr="Βιογραφικό" data-en="Biography">Βιογραφικό</a></li>
+      <li><a href="performance.html" class="lang" data-gr="Παραστάσεις" data-en="Performances">Παραστάσεις</a></li>
+      <li><a href="maestro.html" class="lang" data-gr="Μουσική Προετοιμασία-Διδασκαλία" data-en="Music Preparation & Teaching">Μουσική Προετοιμασία-Διδασκαλία</a></li>
+      <li><a href="discography.html" class="lang" data-gr="Δισκογραφία" data-en="Discography">Δισκογραφία</a></li>
+      <li><a href="contact.html" class="lang" data-gr="Επικοινωνία" data-en="Contact">Επικοινωνία</a></li>
+    </ul>
+    <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+  </nav>
+
+  <!-- Content -->
+  <div class="content-wrapper">
+    <header>
+      <button class="name-button" onclick="window.location.href='index.html'" id="name-button" data-gr="Βασούλα Δελλή" data-en="Vassula Delli">
+        Βασούλα Δελλή
+      </button>
+      <br><br>
+      <p id="title-text" data-gr="Μουσικός / Performer / Συνθέτρια / Παιδαγωγός" data-en="Musician / Performer / Composer / Educator">
+        Μουσικός / Performer / Συνθέτρια / Παιδαγωγός
+      </p>
+      <hr><br>
+      <img src="Vassula_Delli1.jpeg" alt="Profile Picture" class="profile-img" />
+    </header>
+  </div>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Βασούλα Δελλή<br>Created by Chris Tzouvaras</p>
+  </footer>
+
+  <!-- Language Toggle Script -->
+  <script>
+    let isGreek = true;
+
+    function toggleLanguage() {
+      isGreek = !isGreek;
+
+      document.querySelectorAll('.lang').forEach(el => {
+        el.textContent = isGreek ? el.getAttribute('data-gr') : el.getAttribute('data-en');
+      });
+
+      document.getElementById('title-text').textContent = isGreek 
+        ? document.getElementById('title-text').getAttribute('data-gr') 
+        : document.getElementById('title-text').getAttribute('data-en');
+
+      document.getElementById('name-button').textContent = isGreek 
+        ? document.getElementById('name-button').getAttribute('data-gr') 
+        : document.getElementById('name-button').getAttribute('data-en');
+
+      document.querySelector('.lang-toggle').textContent = isGreek ? "EN" : "GR";
+    }
+  </script>
+</body>
+</html>

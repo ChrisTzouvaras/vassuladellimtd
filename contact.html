@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Επικοινωνία - Βασούλα Δελλή</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            color: black;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: absolute;
+            right: 20px;
+            background: white;
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .lang-toggle:hover {
+            background: black;
+            color: white;
+        }
+
+        /* Page Content */
+        .content-wrapper {
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            text-align: center;
+            color: black;
+            width: 100%;
+        }
+        .name-button {
+            background: none;
+            border: none;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .name-button:hover {
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: none;
+            border-radius: 8px;
+            box-shadow: none;
+        }
+
+        .contact-image {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px auto;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background: none;
+            border-radius: 8px;
+            box-shadow:none;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .contact-form input[type="submit"] {
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #444;
+        }
+
+        /* Footer */
+        footer {
+            background: none;
+            color: black;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h2{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="bio.html" class="lang" data-gr="Βιογραφικό" data-en="Biography">Βιογραφικό</a></li>
+            <li><a href="performance.html" class="lang" data-gr="Παραστάσεις" data-en="Performances">Παραστάσεις</a></li>
+            <li><a href="maestro.html" class="lang" data-gr="Μουσική Προετοιμασία-Διδασκαλία" data-en="Music Preparation & Teaching">Μουσική Προετοιμασία-Διδασκαλία</a></li>
+            <li><a href="discography.html" class="lang" data-gr="Δισκογραφία" data-en="Discography">Δισκογραφία</a></li>
+            <li><a href="contact.html" class="lang" data-gr="Επικοινωνία" data-en="Contact">Επικοινωνία</a></li>
+        </ul>
+        <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+    </nav>
+
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <header>
+            <button class="name-button" onclick="window.location.href='index.html'" id="name-button" data-gr="Βασούλα Δελλή" data-en="Vassula Delli">
+                Βασούλα Δελλή
+            </button>
+            <br><br>
+            <p class="lang" data-gr="Μουσικός / Performer / Συνθέτρια / Παιδαγωγός" data-en="Musician / Performer / Composer / Educator">
+                Μουσικός / Performer / Συνθέτρια / Παιδαγωγός
+            </p>
+            <br><hr>
+        </header>
+
+        <!-- Contact Section -->
+        <div class="contact-container">
+            <h2 class="lang" data-gr="Στοιχεία επικοινωνίας" data-en="Contact Information">Στοιχεία επικοινωνίας</h2>
+            <img src="./contact-us-1908762_1280.webp" class="contact-image" alt="Vassoula Delli Image">
+            <p><strong>Τηλέφωνο:</strong> +30 6978895921</p>
+            <p><strong>Email:</strong> <a href="mailto:vassulad@hotmail.com">vassulad@hotmail.com</a></p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h3 class="lang" data-gr="Επικοινωνήστε μαζί μου" data-en="Get in Touch">Επικοινωνήστε μαζί μου</h3>
+            <br>
+            <form action="https://formsubmit.co/vassulad@hotmail.com" method="POST">
+                <input type="text" name="name" required class="lang" data-gr="Το όνομά σας" data-en="Your name" placeholder="Το όνομά σας">
+                <input type="email" name="email" required class="lang" data-gr="Ηλεκτρονική διεύθυνση" data-en="Email address" placeholder="Ηλεκτρονική διεύθυνση">
+                <textarea name="message" rows="4" required class="lang" data-gr="Γράψτε το μήνυμά σας" data-en="Write your message" placeholder="Γράψτε το μήνυμά σας"></textarea>
+                <input type="submit" value="Αποστολή" class="lang" data-gr="Αποστολή" data-en="Send">
+            </form>
+        </div>
+    </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Βασούλα Δελλή<br> Created by Chris Tzouvaras</p>
+    </footer>
+
+    <script>
+        let isGreek = true;
+    
+        function toggleLanguage() {
+            isGreek = !isGreek;
+    
+            document.querySelectorAll('.lang').forEach(el => {
+                el.textContent = isGreek ? el.getAttribute('data-gr') : el.getAttribute('data-en');
+            });
+    
+            // Update name-button text too!
+            const nameButton = document.getElementById('name-button');
+            nameButton.textContent = isGreek 
+                ? nameButton.getAttribute('data-gr') 
+                : nameButton.getAttribute('data-en');
+    
+            // Toggle button text
+            document.querySelector('.lang-toggle').textContent = isGreek ? "EN" : "GR";
+        }
+    </script>
+    
+</body>
+</html>
